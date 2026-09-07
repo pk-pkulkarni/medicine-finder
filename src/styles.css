@@ -20,6 +20,7 @@
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   color: var(--ink);
   background:
     linear-gradient(135deg, rgba(15, 118, 110, 0.12), transparent 34%),
@@ -41,6 +42,7 @@ button {
   display: grid;
   grid-template-columns: 320px 1fr;
   min-height: 100vh;
+  min-width: 0;
 }
 
 .sidebar {
@@ -51,6 +53,7 @@ button {
   top: 0;
   height: 100vh;
   overflow: auto;
+  min-width: 0;
 }
 
 .brand {
@@ -101,6 +104,7 @@ label {
 input,
 textarea {
   width: 100%;
+  max-width: 100%;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: white;
@@ -154,6 +158,7 @@ textarea:focus {
 .workspace {
   padding: 28px;
   overflow: hidden;
+  min-width: 0;
 }
 
 .topbar,
@@ -243,6 +248,7 @@ textarea:focus {
 .results-panel,
 .documents-panel {
   padding: 18px;
+  min-width: 0;
 }
 
 .panel-heading {
@@ -272,6 +278,8 @@ textarea:focus {
 
 .table-wrap {
   overflow: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
 }
 
 table {
@@ -337,6 +345,7 @@ th {
   justify-content: space-between;
   gap: 10px;
   margin-top: 12px;
+  flex-wrap: wrap;
 }
 
 dialog {
@@ -397,6 +406,8 @@ dialog::backdrop {
   .sidebar {
     position: static;
     height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
   }
 
   .workspace {
@@ -405,14 +416,182 @@ dialog::backdrop {
 }
 
 @media (max-width: 560px) {
+  body {
+    background:
+      linear-gradient(160deg, rgba(15, 118, 110, 0.16), transparent 42%),
+      var(--wash);
+  }
+
+  .sidebar {
+    padding: 16px;
+  }
+
+  .brand {
+    margin-bottom: 18px;
+  }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand h1 {
+    font-size: 1.18rem;
+  }
+
+  .workspace {
+    padding: 14px;
+  }
+
   .topbar,
   .panel-heading {
     align-items: stretch;
     flex-direction: column;
+    gap: 8px;
+  }
+
+  .status-pill {
+    width: fit-content;
+    white-space: normal;
+  }
+
+  .search-panel,
+  .document-panel,
+  .results-panel,
+  .documents-panel {
+    border-radius: 14px;
+    padding: 14px;
   }
 
   .stats-grid,
   .two-column {
     grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .stats-grid div {
+    padding: 10px 8px;
+  }
+
+  .stats-grid strong {
+    font-size: 1.2rem;
+  }
+
+  .stats-grid span {
+    font-size: 0.72rem;
+  }
+
+  input,
+  textarea,
+  .primary-action {
+    min-height: 46px;
+    font-size: 16px;
+  }
+
+  input[type="file"] {
+    padding: 9px;
+  }
+
+  table,
+  thead,
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+  }
+
+  table {
+    min-width: 0;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody {
+    display: grid;
+    gap: 12px;
+  }
+
+  tr {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: white;
+    padding: 10px;
+  }
+
+  td {
+    display: grid;
+    grid-template-columns: 108px minmax(0, 1fr);
+    gap: 10px;
+    border-bottom: 0;
+    padding: 8px 0;
+    overflow-wrap: anywhere;
+  }
+
+  td::before {
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  td:nth-child(1)::before {
+    content: "Date";
+  }
+
+  td:nth-child(2)::before {
+    content: "Patient";
+  }
+
+  td:nth-child(3)::before {
+    content: "Symptom";
+  }
+
+  td:nth-child(4)::before {
+    content: "Medicine";
+  }
+
+  td:nth-child(5)::before {
+    content: "Dosage";
+  }
+
+  td:nth-child(6)::before {
+    content: "Quantity";
+  }
+
+  td:nth-child(7)::before {
+    content: "Duration";
+  }
+
+  td:nth-child(8)::before {
+    content: "Document";
+  }
+
+  td[colspan] {
+    display: block;
+  }
+
+  td[colspan]::before {
+    content: "";
+  }
+
+  .link-button,
+  .delete-button {
+    text-align: left;
+    overflow-wrap: anywhere;
+  }
+
+  .document-list {
+    grid-template-columns: 1fr;
+  }
+
+  dialog {
+    width: calc(100vw - 18px);
+    height: calc(100vh - 18px);
   }
 }
