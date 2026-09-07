@@ -108,7 +108,7 @@ function renderStats() {
   const medicineCount = state.documents.reduce((total, document) => total + document.medicines.length, 0);
 
   el.activePatientTitle.textContent = selected ? selected.name : "All patients";
-  el.storageStatus.textContent = "Django + SQLite";
+  el.storageStatus.textContent = "Django backend";
   el.docCount.textContent = state.documents.length;
   el.medicineCount.textContent = medicineCount;
   el.documentForm.hidden = !selected;
