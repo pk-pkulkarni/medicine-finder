@@ -95,6 +95,7 @@ $env:MYSQL_PORT="3306"
 ```
 
 You would also need to install a compatible MySQL driver such as `mysqlclient` or `PyMySQL`.
+Do not add `mysqlclient` to Render unless you switch the hosted app to MySQL; the current hosted path uses Supabase Postgres.
 
 Supabase is a good later option if you want hosted Postgres, authentication, file storage, and sync across web/mobile devices. For that path, row-level security and private file access need to be designed before putting prescription data online.
 

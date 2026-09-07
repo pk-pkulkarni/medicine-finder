@@ -20,6 +20,7 @@ Reason:
 - Static hosts cannot run the Django/OCR backend.
 - Render free can run the Dockerized Django app, but its local filesystem is ephemeral.
 - Supabase can keep the database and prescription files durable outside the free web container.
+- The hosted deployment uses Supabase Postgres, so `mysqlclient` is intentionally not included in `requirements.txt`.
 
 ## Required Hosted Environment Values
 
