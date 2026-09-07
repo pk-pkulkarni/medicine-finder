@@ -1,0 +1,12 @@
+Django==6.1.1
+dj-database-url==3.1.2
+django-storages==1.14.6
+gunicorn==26.2.0
+mysqlclient==2.2.8
+psycopg[binary]==3.3.5
+pypdf==6.17.0
+PyMuPDF==1.26.7
+Pillow==12.3.0
+pytesseract==0.3.13
+boto3==1.43.88
+whitenoise==6.12.0

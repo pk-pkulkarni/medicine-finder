@@ -1,0 +1,10 @@
+{
+  "name": "medicine-finder",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local-first prescription document finder for patients, medicines, and symptoms.",
+  "scripts": {
+    "start": "python backend/manage.py runserver 5173",
+    "serve": "python backend/manage.py runserver 5173"
+  }
+}
