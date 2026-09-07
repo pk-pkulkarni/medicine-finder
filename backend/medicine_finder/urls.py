@@ -8,6 +8,7 @@ urlpatterns = [
     path("", TemplateView.as_view(template_name="index.html"), name="home"),
     path("api/", include("records.urls")),
     re_path(r"^src/(?P<path>.*)$", serve, {"document_root": settings.ROOT_DIR / "src"}),
+    path(".well-known/assetlinks.json", serve, {"document_root": settings.ROOT_DIR / ".well-known", "path": "assetlinks.json"}),
     path("manifest.webmanifest", serve, {"document_root": settings.ROOT_DIR, "path": "manifest.webmanifest"}),
     path("sw.js", serve, {"document_root": settings.ROOT_DIR, "path": "sw.js"}),
 ]

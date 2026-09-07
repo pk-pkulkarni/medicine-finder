@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.gnsolutions.medicinefinder",
+    "sha256_cert_fingerprints": ["62:C2:7C:92:79:5E:28:6D:61:6A:E2:50:86:8E:41:C6:71:9F:7F:D9:4D:58:10:05:8B:57:7C:7C:53:60:7D:50"]
+  }
+}]
