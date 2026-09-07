@@ -1,10 +1,10 @@
-const CACHE_NAME = "medicine-finder-v4";
+const CACHE_NAME = "medicine-finder-v5";
 const APP_ASSETS = [
   "./",
   "./index.html",
   "./manifest.webmanifest",
-  "./assets/icon-192.png",
-  "./assets/icon-512.png",
+  "./static/assets/icon-192.png",
+  "./static/assets/icon-512.png",
   "./src/app.js",
   "./src/styles.css"
 ];
